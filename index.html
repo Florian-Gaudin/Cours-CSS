@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Les bases de CSS</h1>
+        <div class="conteneur">
+            <h2>Eléments sticky et fixed</h2>
+            <div class="box fixed">Élément fixed</div>
+            <div class="stickbar">
+            <div class="box sticky1">Élément sticky</div>
+            <p class="pgrid">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+            </div>
+            
+        <div>  
+    </header> 
+    
+    <main>
+        
+        <div class="box2 sticky2">Élément sticky</div>
+            <div class="positioning">
+                <h2>Position relative et absolute</h2>
+                <span id="circle">absolute</span>
+                <span id="circle2">absolute 2</span>
+                <span id="circle3">absolute 3</span>
+                <span id="circle4">absolute 4</span>
+                <span id="rectangle">absolute</span>
+            </div>
+
+        <div class="flexbox">
+            <h2>Flexbox</h2>
+
+            <ul>
+                <li>
+                    <a href="https://flexbox.help/">https://flexbox.help/</a>
+                </li>
+                <li>
+                    <a href="https://www.reveillere.fr/M2WEB/sheets/css.pdf">https://www.reveillere.fr</a>
+                </li>
+                <li>
+                    <a href="https://cssgenerator.org/">https://cssgenerator.org/</a>
+                </li>
+            </ul>
+            <div class="flexbox2">
+                <a href="./assets/flexbox_froggy.png"><img class="fleximg" src="./assets/flexbox_froggy.png" alt="Flexbox Froggy"></a>
+                <a href="./assets/flexbox_froggy_hard.png"><img class="fleximg" src="./assets/flexbox_froggy_hard.png" alt="Flexbox Froggy Difficile"></a>
+            </div>
+ 
+        </div>
+
+        <div class="grid">
+            <h2>Grid</h2>
+            <div class="grid-container">
+                <div class="img">
+                    <img src="./assets/logo_CSS.png" height=200 alt="logo CSS">     
+                </div>
+                <form>
+                    <input type="text" id="firstname" placeholder="Prénom">
+                    <input type="text" id="surname" placeholder="Nom">
+                    <textarea cols="30" rows="30" placeholder="Ici votre message"></textarea>
+                    <input type="submit" value="Valider">
+                </form>
+            </div>
+            <div class="img">
+                <a href="./assets/grid_garden.png"><img class="gridimg" src="./assets/grid_garden.png" alt="grid garden" width="50%"></a>
+            </div>
+        </div>
+
+        <div class="tableau">
+            <h2>Tableau</h2>
+            <table>
+                <caption>Titre pour mon tableau</caption>
+                <tr>
+                    <th></th>
+                    <th>Nom</th>
+                    <th>Âge</th>
+                    <th>Pays</th>
+                </tr>
+                <tr>
+                    <th>Ligne 1</th>
+                    <td>Carmen</td>
+                    <td>33 ans</td>
+                    <td>Espagne</td>
+                </tr>
+                <tr>
+                    <th>Ligne 2</th>
+                    <td>Michelle</td>
+                    <td>26 ans</td>
+                    <td>États-Unis</td>
+                </tr>
+            </table>
+        </div>  
+
+         <!-- Formulaires en HTML -->
+        <div class="formulaire">
+            <h2>Formulaire</h2>
+            <form action="/action.php" method="post">
+
+                <label for="date">Date de votre requête :</label>
+                <input id="date" type="date" value="2023-01-01"/>
+
+            <fieldset><legend>Identité</legend>
+                <label for="name">Nom : </label>
+                <input id="name" type="text" placeholder="Entrez votre nom" autofocus required/><br>
+
+                <label for="number">Entrez votre âge : </label>
+                <input type="number" id="number-age" value="15" oninput="document.getElementById('range-age').value=this.value">
+                <input type="range" id="range-age" min="0" max="100"
+                oninput="document.getElementById('number-age').value=this.value"><br>
+                
+                <!-- Input select -->
+                <label for="gender">Genre :</label>
+                <select id="gender">
+                <option selected="selected" value="Homme">Homme</option>
+                <option value="Femme">Femme</option>
+                </select><br>
+
+                <!-- Input radio -->
+                <div>Espèce :
+                <input class="radio" type="radio" name="type" id="human" checked />
+                <label for="human">Humain</label>
+
+                <input class="radio" type="radio" name="type" id="dog" />
+                <label for="dog">Chien</label>
+
+                <input class="radio" type="radio" name="type" id="cat" />
+                <label for="cat">Chat</label>
+                </div>
+            </fieldset>
+            <fieldset><legend>Coordonnées</legend>
+                <label for="mail">Votre e-mail :</label>
+                <input id="mail" type="email" required><br>
+
+                <label for="github">Votre Github :</label>
+                <input id="github" type="url"><br>
+
+                <label for="phone">Votre téléphone :</label>
+                <input id="phone" type="tel" required>
+            </fieldset>
+                
+
+                <textarea cols="20" rows="5" placeholder="Votre message..."></textarea><br />
+
+                <!-- Input Checkbox -->
+                <label><input type="checkbox" required/>Accepter les CGV</label> <br />
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+        <div class="form2">
+            <form class="recherche" action="action.php" method="post">
+                <label for="site-search">Rechercher sur le site :</label>
+                <input id="site-search" type="search" />
+                <button> Go !</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

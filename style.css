@@ -1,0 +1,433 @@
+
+/*  Importer une police depuis internet, à éviter, pratique rapide mais non pérenne */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+
+/* Importer une police en la téléchargeant, par exemple depuis Google fonts */
+@font-face {
+    font-family: "font_1";
+    src: url(./assets/NotoSans-Medium.ttf);
+}
+
+
+
+/* *****************  DEBUG ******************** */
+/*
+
+Permet d'encadrer chaque élément grâce au sélecteur universel *{
+
+*{
+    border: 2px solid red;
+}
+
+*/
+
+/* *{
+    margin: 0;
+    padding: 0;
+} 
+
+Enlever toutes les marges et tous les padding en début de CSS pour tout faire en manuel
+*/
+
+body{
+    font-family: "font_1", serif;
+    background:url(./assets/bg.jpg) fixed center/cover;
+    /* fixed : le background ne bouge pas quand on scroll la page ; no-repeat : l'image ne se répète pas ; en général center/cover est suffisant pour avoir un bon background */
+    height: 500vh;
+    /* 100vh  = 100% de la taille de l'écran utilisateur  500vh = 5 fois la taille de l'écran utilisateur */
+    /* overflow:hidden; */
+    /* retire les marges => on ne peut plus scroller la page */
+}
+
+h1{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 2.5rem;
+    /* privilégier mesure rem pour police, px pour le reste */
+    color:darkblue;
+    text-shadow: 5px 3px 0 #62e9e9;
+    /* shadow 1ère valeur = axe X,  2ème = Y */
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+   
+}
+/* cibler la 1ère lettre du titre, du paragraphe, de l'élément  ::first-letter */
+ h1::first-letter{
+        font-size: 4rem;
+    }
+
+
+
+/***********************  STICKY FIXED **************/
+
+.box {
+    border-radius: 10px;
+    border: 3px solid black;
+    height: 150px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .conteneur {
+    width: 90%;
+    margin: auto;
+  }
+
+  .pgrid {
+    grid-area: 2/1/3/3;
+    color: rgb(10, 10, 10);
+  }
+
+  .sticky1,
+  .sticky2 {
+    position: sticky;
+    background-color: #ec9d54;
+    margin: auto;
+    top: 0;
+  }
+
+  .box2 {
+    background-color: #C2B0F9;
+    border-radius: 10px;
+    border: 3px solid black;
+    height: 150px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sticky2 {
+    z-index: 2;
+  }
+
+  .fixed {
+    position: fixed;
+    background-color: #CBFCB9;
+    top: 10;
+    left: 40;
+    z-index: 3;
+  }
+
+
+main{
+    background: whitesmoke;
+    width: 90%;
+    min-height: 500px;
+    /* taille des boites responsive : largeur en % ; hauteur en px car tout le monde scroll de haut en bas, quelque soit l'écran */
+    
+    /* margin = marge à l'extérieur de la boite */
+    margin: 10px auto;
+    /* margin : 2 valeurs = haut/bas + gauche droite
+    4 valeurs = haut droite bas gauche
+    Marge Responsive centrée : auto pour gauche/droite, ça reste centré
+    */
+
+    /* padding = marge à l'intérieur de la boite */
+    padding: 10px 40px;
+
+    /* arrondi des bords */
+    border-radius: 10px;
+
+    box-shadow: 0 2px 12px 5px rgba(0, 0, 0, 0.397);
+}
+
+.positioning,
+.flexbox,
+.grid,
+.tableau,
+.conteneur,
+.formulaire,
+.form2 {
+    border: 2px solid skyblue;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/******************** Positioning ********************************/
+.positioning{
+    position: relative;
+    height: 400px;
+}
+
+h2{
+    margin: 10px;
+    text-align: center;
+}
+
+#circle{
+    height: 60px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: skyblue;
+    padding: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: -10%;
+    right: 5%;
+    box-shadow: 0 2px 12px 5px rgba(0, 0, 0, 0.397);
+}
+
+#circle2{
+    height: 60px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(226, 83, 73);
+    padding: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: 65%;
+    left: 20%;
+    box-shadow: 0 2px 12px 5px rgba(0, 0, 0, 0.397);
+}
+
+#circle3{
+    height: 90px;
+    width: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(221, 240, 118);
+    padding: 20px;
+    border-style: dashed;
+    border-radius: 50%;
+    border-color: aqua;
+    position: absolute;
+    top: 15%;
+    right: 80%;
+    box-shadow: 0 12px 36px 51px rgba(156, 20, 20, 0.397);
+}
+
+#circle4{
+    height: 190px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(29, 236, 39, 0.589);
+    padding: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: 25%;
+    right: 15%;
+    box-shadow: 0 90px 50px 40px rgba(55, 221, 40, 0.5);
+}
+
+#rectangle{
+
+    height: 150px;
+    width: 300px;
+    /* on pourrait aussi mettre width: 15%  il ferait toujours la largeur de 15% de son parent */
+    background: rgba(72, 156, 212, 0.411);
+    padding: 20px;
+    position: absolute;
+
+    /* centrer l'élément dans la boîte : 50% à partir du bord gauche et 50% à partir du bord haut, cela laisse un décalage car le 50% n'est pas pris à partir du centre de l'élément
+    on corrige ce décalage avec transform:translate de -50% sa taille par la gauche et -50% de sa taille par le haut */
+    top: 50%;
+    left: 50%;
+    transform: translate(-70%, -15%);
+
+    z-index: 1;
+    /* note l'ordre d'affichage de l'élément
+    par exemple si 2 éléments se chevauchent, permet de choisir lequel chevauche l'autre
+    permet aussi de mettre un élément en fond et en transparence avec z-index: -1 et en réduisant l'opacité du background */
+}
+
+/************************************ Flexbox **********************************/
+
+ul,
+.flexbox2 {
+    display: flex;
+    justify-content: space-around;
+    padding:0;
+}
+
+.flexbox2 {
+    max-height: 500px;
+}
+
+.fleximg,
+.gridimg {
+    max-height: 350px;
+}
+
+li {
+    list-style-type: none;
+    font-size: 0.7rem;
+    height: 160px;
+    width:160px;
+    background: turquoise;
+    /* Centrer verticalement et horizontalement */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/**********************GRID *********************/
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    padding: 20px;
+}
+
+.img{
+text-align: center;
+}
+
+form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+        'i1 i2'
+        'ta ta'
+        'bt bt';
+}
+
+input,
+textarea {
+    margin:5px;
+    height: 45px;
+    border: 1px solid darkblue;
+    padding:10px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-family: "font_1";
+}
+
+#firstname{
+    grid-area: i1;
+}
+#surname{
+    grid-area: i2;
+}
+textarea{
+    grid-area: ta;
+    resize: none;
+}
+input[type="submit"]{
+    grid-area: bt;
+    cursor:pointer;
+    background: cyan;
+    transition: 0.4s;
+}
+
+input[type="submit"]:hover {
+    background: darkblue;
+    color: white;
+}
+
+
+  /******************* TABLEAU ****************************/
+
+
+table {
+    border-collapse: collapse;
+    margin: auto;
+}
+
+caption {
+    font-size: 1.1rem;
+}
+
+  td,
+  th /* Toutes les cellules des tableaux... */
+{
+    border: 1px solid black; /* auront une bordure de 1px */
+    padding: 15px;
+}
+
+/* ***************** FORMULAIRES ******************** */
+form {
+  display: flex;
+  flex-direction: column;
+  margin: auto; 
+  width: 50%;
+  font-size: 1rem;
+  flex-wrap: wrap;
+}
+fieldset {
+    width : 100%;
+    justify-items: center;
+    background-color: antiquewhite;
+    border-radius: 10px;
+}
+
+legend {
+    background-color: azure;
+    font-size: 1.2rem;
+}
+
+input {
+    padding: 1px;
+    border: 1px solid black;
+    font-size: 1rem;
+    height: 25px;
+}
+
+.radio {
+    height: 15px;
+}
+
+select {
+    padding: 3px;
+    border: 1px solid black;
+    font-size: 1rem;
+}
+
+/**************** Responsive *******************/
+
+
+@media  screen and (max-width: 1600px) {
+    .flexbox2 {display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 10px;
+        justify-items: center;
+    }
+    .fleximg {
+        max-height: 150px;
+    }
+}
+
+@media  screen and (max-width: 1200px) {
+    ul {display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 10px;
+        justify-items: center;
+    }
+    li {
+        font-size: 1.5rem;
+        height: 300px;
+        width:300px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .grid-container{
+        display:block;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    form{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            'i1'
+            'i2'
+            'ta'
+            'bt';
+    }
+}
